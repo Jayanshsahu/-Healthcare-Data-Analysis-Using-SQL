@@ -68,10 +68,12 @@ Database Name: Healthcare
 Table Name: healthcare
 
 
+<img width="960" height="470" alt="Screenshot tt 190001" src="https://github.com/user-attachments/assets/e7906436-ab2d-4ad9-893d-11d75c3b08ec" />
 
 
 
 📊 Key Business Questions & Findings
+
                   1. 📈 Patient Demographics
 
                   Total Records:
@@ -85,21 +87,18 @@ Table Name: healthcare
 🏥 Hospital & Medical Insights
 
            Most Preferred Hospital:
-           
                   SELECT Hospital, COUNT(*) FROM Healthcare GROUP BY Hospital ORDER BY COUNT(*) DESC;
 
 
 
 
            Most Common Medical Conditions:
-           
                   SELECT Medical_Condition, COUNT(*) FROM Healthcare GROUP BY Medical_Condition ORDER BY COUNT(*) DESC;
 
 
 
 
            Top Medicines per Condition (Ranked):
-           
                   SELECT Medical_Condition, Medication, COUNT(*) AS Total, 
                   RANK() OVER(PARTITION BY Medical_Condition ORDER BY COUNT(*) DESC) AS Rank_Medicine
                   FROM Healthcare GROUP BY 1,2;
@@ -108,7 +107,6 @@ Table Name: healthcare
 
 
             💸 Financial Analysis
-            
                   Avg Billing by Condition:
                   SELECT Medical_Condition, ROUND(AVG(Billing_Amount),2) FROM Healthcare GROUP BY Medical_Condition;
 
@@ -116,14 +114,12 @@ Table Name: healthcare
 
 
            Total Billing by Insurance Provider:
-           
                   SELECT Insurance_Provider, ROUND(SUM(Billing_Amount), 2) FROM Healthcare GROUP BY Insurance_Provider;
 
 
 
 
            Min, Max, Avg by Insurance:
-           
                       SELECT Insurance_Provider, ROUND(AVG(Billing_Amount),0), 
                       ROUND(MIN(Billing_Amount),0), ROUND(MAX(Billing_Amount),0)
                       FROM Healthcare GROUP BY Insurance_Provider;
@@ -132,8 +128,7 @@ Table Name: healthcare
 
 
           Universal Donors/Receivers:
-                  SELECT 
-                  
+                    SELECT 
                     (SELECT COUNT(*) FROM Healthcare WHERE Blood_Type = 'O-') AS Universal_Blood_Donor,
                     (SELECT COUNT(*) FROM Healthcare WHERE Blood_Type = 'AB+') AS Universal_Blood_Receiver;
 
@@ -155,7 +150,7 @@ Table Name: healthcare
 
 
 
-🧠 Learnings & Skills Applied
+           🧠 Learnings & Skills Applied
 
                   SQL Joins, Aggregations, Ranking (RANK, DENSE_RANK)
 
@@ -169,11 +164,13 @@ Table Name: healthcare
 
 
 
-📜 License
+           📜 License
                   This project is released under the MIT License.
                   For educational and demonstrative use only.
 
-✅ Summary
+
+
+           ✅ Summary
                   This healthcare project demonstrates how structured data analysis with SQL can bring
                   out hidden trends in medical records. From cost insights to hospital performance, the
                   queries help simulate decisions that could assist hospital managers, 

@@ -68,7 +68,8 @@ Database Name: Healthcare
 Table Name: healthcare
 
 
-<img width="960" height="470" alt="Screenshot tt 190001" src="https://github.com/user-attachments/assets/e7906436-ab2d-4ad9-893d-11d75c3b08ec" />
+<img width="960" height="470" alt="Screenshot tt 190001" src="https://github.com/user-attachments/assets/1e77db74-f47e-474a-8617-b402a9430aa4" />
+
 
 
 
